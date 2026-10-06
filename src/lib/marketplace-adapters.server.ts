@@ -144,14 +144,14 @@ export function buildQueries(adapter: MarketplaceAdapter, periods: string[], cat
   const periodList = periods.length ? periods : ["vintage"];
   const categoryList = categories.length ? categories : [""];
   const queries: string[] = [];
-  for (const category of categoryList) {
-    for (const period of periodList) {
-      const term = periodTerms.get(`${period}|${adapter.language}`) ?? period.toLowerCase();
-      const word = category ? categoryWords[category]?.[adapter.language] ?? category.toLowerCase() : "";
-      const q = adapter.language === "en" ? `${term} ${word}` : `${word} ${term}`;
-      queries.push(q.trim());
-      if (queries.length >= cap) return [...new Set(queries)];
-    }
+  const total = Math.min(cap, periodList.length * categoryList.length);
+  for (let i = 0; queries.length < total && i < periodList.length * categoryList.length; i++) {
+    const period = periodList[i % periodList.length]!;
+    const category = categoryList[(i + Math.floor(i / periodList.length)) % categoryList.length]!;
+    const term = periodTerms.get(`${period}|${adapter.language}`) ?? period.toLowerCase();
+    const word = category ? categoryWords[category]?.[adapter.language] ?? category.toLowerCase() : "";
+    const q = (adapter.language === "en" ? `${term} ${word}` : `${word} ${term}`).trim();
+    if (!queries.includes(q)) queries.push(q);
   }
   return [...new Set(queries)];
 }
