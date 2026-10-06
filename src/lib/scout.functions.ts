@@ -44,18 +44,3 @@ export const screenListing = createServerFn({ method: "POST" })
     const request = new Request("https://scout.local/screen");
     return screenListingWithAstra(data, request);
   });
-
-export const startIngestion = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
-  .inputValidator((input) => z.object({ sourceId: z.string().uuid(), query: z.string() }).parse(input))
-  .handler(async ({ data, context }) => {
-    const { data: admin } = await context.supabase.rpc("is_admin");
-    if (!admin) throw new Error("Admin access required");
-    const { data: source, error: sourceError } = await context.supabase.from("sources").select("actor_id,input_template").eq("id", data.sourceId).single();
-    if (sourceError || !source?.actor_id) throw new Error(sourceError?.message ?? "Source is not configured");
-    const { startApifyRun } = await import("./ingestion.server");
-    const runId = await startApifyRun({ actorId: source.actor_id, input: { ...(source.input_template as Record<string, unknown>), searchQuery: data.query } });
-    const { data: run, error } = await context.supabase.from("ingestion_runs").insert({ source_id: data.sourceId, search_query: data.query, status: "running", apify_run_id: runId, started_at: new Date().toISOString(), created_by: context.userId }).select("id").single();
-    if (error) throw new Error(error.message);
-    return { id: run.id, providerRunId: runId };
-  });
