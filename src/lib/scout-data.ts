@@ -23,6 +23,7 @@ export const sources = ["Leboncoin", "Wallapop", "Kleinanzeigen", "Catawiki", "e
 export const demoListings = [
   {
     id: "art-deco-chair",
+    category: "Armchairs",
     image: artDecoChair,
     title: "French walnut club chair",
     location: "Lyon, France",
@@ -41,6 +42,7 @@ export const demoListings = [
   },
   {
     id: "teak-sideboard",
+    category: "Sideboards",
     image: teakSideboard,
     title: "Long teak sideboard, 1960s",
     location: "Utrecht, Netherlands",
@@ -59,6 +61,7 @@ export const demoListings = [
   },
   {
     id: "space-age-lamp",
+    category: "Lighting",
     image: spaceAgeLamp,
     title: "Chrome mushroom table lamp",
     location: "Milan, Italy",
@@ -77,6 +80,7 @@ export const demoListings = [
   },
   {
     id: "bauhaus-chair",
+    category: "Chairs",
     image: bauhausChair,
     title: "Tubular steel cantilever chair",
     location: "Berlin, Germany",
