@@ -13,16 +13,29 @@ import { categories, countries, demoListings, periods, sources, type TriState } 
 import { saveScreeningProfile } from "@/lib/scout.functions";
 import { useServerFn } from "@tanstack/react-start";
 import { supabase } from "@/integrations/supabase/client";
-import { collectFinishedRuns, getLiveListings, requestFreshListings, type LiveListing } from "@/lib/ingestion.functions";
+import { collectFinishedRuns, getLiveListings, requestFreshListings, runScreeningBatch, type LiveListing } from "@/lib/ingestion.functions";
 
-type Card = (typeof demoListings)[number] & { url?: string; live?: boolean };
+type Card = (typeof demoListings)[number] & { url?: string; live?: boolean; pending?: boolean };
 const flags: Record<string, string> = { France: "🇫🇷", Spain: "🇪🇸", Germany: "🇩🇪", Italy: "🇮🇹", Netherlands: "🇳🇱", "United Kingdom": "🇬🇧" };
 const money = (value: number, currency: string) => new Intl.NumberFormat("en-GB", { style: "currency", currency, maximumFractionDigits: 0 }).format(value);
 function toCard(item: LiveListing): Card {
   const local = item.price !== null && item.currency ? money(item.price, item.currency) : "Price on request";
   const gbp = item.priceGbp !== null && item.currency !== "GBP" ? ` · ≈${money(item.priceGbp, "GBP")}` : "";
   const label = item.priceKind === "current_bid" ? `Current bid ${local}` : item.priceKind === "offer" ? `${local} or offer` : local;
-  return { id: item.id, category: "", image: item.image ?? "", title: item.title, location: item.location ?? item.country, flag: flags[item.country] ?? "🇪🇺", source: item.source, price: item.priceGbp ?? 0, priceLabel: label + gbp, resale: "Awaiting valuation", margin: "—", marginPercent: "", period: "Not yet screened", style: item.source, confidence: 0, note: (item.description ?? "").slice(0, 220) || "No description provided.", redFlags: item.auctionEnd ? [`Auction ends ${new Date(item.auctionEnd).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}`] : [], url: item.url, live: true };
+  const t = item.tags;
+  const flagsList = [...(t?.redFlags ?? []), ...(item.auctionEnd ? [`Auction ends ${new Date(item.auctionEnd).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}`] : [])];
+  return {
+    id: item.id, category: t?.category ?? "", image: item.image ?? "", title: item.title, location: item.location ?? item.country,
+    flag: flags[item.country] ?? "🇪🇺", source: item.source, price: item.priceGbp ?? 0, priceLabel: label + gbp,
+    resale: t?.resaleLow != null && t.resaleHigh != null && t.resaleHigh > 0 ? `${money(t.resaleLow, "GBP")}–${money(t.resaleHigh, "GBP")}` : t ? "No valuation" : "Awaiting valuation",
+    margin: item.margin ? `${item.margin.gbp >= 0 ? "+" : "−"}${money(Math.abs(item.margin.gbp), "GBP")}` : item.priceKind === "offer" ? "Offers only" : "—",
+    marginPercent: item.margin && item.margin.gbp > 0 ? `${item.margin.percent}%` : "",
+    period: t ? t.period : "Not yet screened", style: t?.style ?? item.source,
+    confidence: t?.periodConfidence ? Math.round(t.periodConfidence * 100) : 0,
+    note: t?.note ?? ((item.description ?? "").slice(0, 220) || "No description provided."),
+    redFlags: item.decision === "maybe" && item.reason ? [`Maybe: ${item.reason}`, ...flagsList] : flagsList,
+    url: item.url, live: true, pending: !t,
+  };
 }
 
 type View = "feed" | "shortlist" | "screening" | "lab" | "settings";
@@ -61,6 +74,17 @@ export function ScoutApp() {
   const loadLive = useServerFn(getLiveListings);
   const requestFresh = useServerFn(requestFreshListings);
   const collect = useServerFn(collectFinishedRuns);
+  const screen = useServerFn(runScreeningBatch);
+  const screenAll = async () => {
+    for (let round = 0; round < 40; round++) {
+      const r = await screen();
+      if (r.paused) { setFetchStatus(r.paused); return; }
+      if (r.screened) await refreshLive();
+      if (r.remaining === 0) return;
+      if (r.remaining < 0) await new Promise((resolve) => setTimeout(resolve, 8000));
+      else setFetchStatus(`AI checking finds… ${r.remaining} left`);
+    }
+  };
 
   useEffect(() => {
     if (!window.localStorage.getItem("scout-onboarded")) setOnboarding(true);
@@ -81,11 +105,13 @@ export function ScoutApp() {
       for (let attempt = 0; attempt < 16; attempt++) {
         const r = await collect();
         if (r.imported) await refreshLive();
+        if (r.imported) await screenAll();
         if (!r.stillRunning) break;
         await new Promise((resolve) => setTimeout(resolve, 15000));
       }
+      await screenAll();
       await refreshLive();
-      setFetchStatus("Up to date.");
+      setFetchStatus((current) => current.startsWith("AI credits") || current.startsWith("AI access") ? current : "Up to date.");
     } catch (e) {
       setFetchStatus(e instanceof Error ? e.message : "Fetching failed");
     }
@@ -147,7 +173,7 @@ export function ScoutApp() {
 }
 
 function Feed({ listing, index, total, onAction, onDetail }: { listing: Card; index: number; total: number; onAction: (action: "pass" | "like" | "super") => void; onDetail: () => void }) {
-  return <div className="mx-auto max-w-6xl px-4 py-5 sm:px-8 lg:py-8"><div className="mb-5 flex items-end justify-between"><div><p className="eyebrow">Curated for your profile</p><h1 className="mt-1 font-display text-3xl sm:text-4xl">Today’s finds</h1></div><span className="text-sm text-muted-foreground">{index + 1} / {total}</span></div><div className="grid gap-6 lg:grid-cols-[minmax(0,640px)_1fr]"><article className="overflow-hidden border border-border bg-card shadow-catalogue"><button type="button" onClick={onDetail} className="group relative block aspect-[4/5] w-full overflow-hidden text-left"><img src={listing.image} alt={listing.title} width={1200} height={1504} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" /><div className="absolute left-4 top-4 flex items-center gap-2"><span className="bg-background/90 px-2.5 py-1 text-xs font-medium backdrop-blur">{listing.flag} {listing.source}</span>{listing.marginPercent ? <span className="bg-success px-2.5 py-1 text-xs font-semibold text-success-foreground">{listing.marginPercent} margin</span> : <span className="bg-background/90 px-2.5 py-1 text-xs backdrop-blur">Awaiting AI check</span>}</div><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-overlay via-overlay/50 to-transparent p-5 pt-24 text-overlay-foreground"><div className="flex items-end justify-between gap-4"><div><p className="text-sm opacity-80">{listing.location}</p><h2 className="mt-1 font-display text-3xl">{listing.title}</h2></div><div className="text-right"><div className="text-2xl font-semibold">{listing.priceLabel}</div><div className="text-xs opacity-75">asking price</div></div></div></div></button><div className="grid grid-cols-3 border-t border-border"><Button variant="ghost" onClick={() => onAction("pass")} className="h-16 rounded-none border-r border-border text-destructive"><ArrowLeft /> Pass</Button><Button variant="ghost" onClick={() => onAction("super")} className="h-16 rounded-none border-r border-border text-primary"><Star /> Save</Button><Button variant="ghost" onClick={() => onAction("like")} className="h-16 rounded-none text-success"><Heart /> Like <ArrowRight /></Button></div></article><aside className="space-y-6 lg:pt-2"><div><p className="eyebrow">Scout estimate</p><div className="mt-2 flex items-baseline justify-between border-b border-border pb-4"><span className="font-display text-3xl">{listing.resale}</span><span className="text-sm text-muted-foreground">resale</span></div><div className="flex items-baseline justify-between py-4"><span className="text-sm text-muted-foreground">Estimated margin</span><span className="text-xl font-semibold text-success">{listing.margin}</span></div></div><div className="flex flex-wrap gap-2"><span className="tag">{listing.period}</span><span className="tag">{listing.style}</span>{listing.confidence > 0 && <span className="tag">{listing.confidence}% confidence</span>}</div><div className="border-l-2 border-primary pl-4"><p className="eyebrow">Dealer note</p><p className="mt-2 text-sm leading-6 text-muted-foreground">{listing.note}</p></div><Button variant="outline" onClick={onDetail} className="w-full justify-between">Inspect listing <ChevronRight /></Button><p className="text-center text-xs text-muted-foreground">Use ← to pass, ↑ to save, → to like</p></aside></div></div>;
+  return <div className="mx-auto max-w-6xl px-4 py-5 sm:px-8 lg:py-8"><div className="mb-5 flex items-end justify-between"><div><p className="eyebrow">Curated for your profile</p><h1 className="mt-1 font-display text-3xl sm:text-4xl">Today’s finds</h1></div><span className="text-sm text-muted-foreground">{index + 1} / {total}</span></div><div className="grid gap-6 lg:grid-cols-[minmax(0,640px)_1fr]"><article className="overflow-hidden border border-border bg-card shadow-catalogue"><button type="button" onClick={onDetail} className="group relative block aspect-[4/5] w-full overflow-hidden text-left"><img src={listing.image} alt={listing.title} width={1200} height={1504} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]" /><div className="absolute left-4 top-4 flex items-center gap-2"><span className="bg-background/90 px-2.5 py-1 text-xs font-medium backdrop-blur">{listing.flag} {listing.source}</span>{listing.marginPercent ? <span className="bg-success px-2.5 py-1 text-xs font-semibold text-success-foreground">{listing.marginPercent} margin</span> : listing.pending ? <span className="bg-background/90 px-2.5 py-1 text-xs backdrop-blur">Awaiting AI check</span> : null}</div><div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-overlay via-overlay/50 to-transparent p-5 pt-24 text-overlay-foreground"><div className="flex items-end justify-between gap-4"><div><p className="text-sm opacity-80">{listing.location}</p><h2 className="mt-1 font-display text-3xl">{listing.title}</h2></div><div className="text-right"><div className="text-2xl font-semibold">{listing.priceLabel}</div><div className="text-xs opacity-75">asking price</div></div></div></div></button><div className="grid grid-cols-3 border-t border-border"><Button variant="ghost" onClick={() => onAction("pass")} className="h-16 rounded-none border-r border-border text-destructive"><ArrowLeft /> Pass</Button><Button variant="ghost" onClick={() => onAction("super")} className="h-16 rounded-none border-r border-border text-primary"><Star /> Save</Button><Button variant="ghost" onClick={() => onAction("like")} className="h-16 rounded-none text-success"><Heart /> Like <ArrowRight /></Button></div></article><aside className="space-y-6 lg:pt-2"><div><p className="eyebrow">Scout estimate</p><div className="mt-2 flex items-baseline justify-between border-b border-border pb-4"><span className="font-display text-3xl">{listing.resale}</span><span className="text-sm text-muted-foreground">resale</span></div><div className="flex items-baseline justify-between py-4"><span className="text-sm text-muted-foreground">Estimated margin</span><span className="text-xl font-semibold text-success">{listing.margin}</span></div></div><div className="flex flex-wrap gap-2"><span className="tag">{listing.period}</span><span className="tag">{listing.style}</span>{listing.confidence > 0 && <span className="tag">{listing.confidence}% confidence</span>}</div><div className="border-l-2 border-primary pl-4"><p className="eyebrow">Dealer note</p><p className="mt-2 text-sm leading-6 text-muted-foreground">{listing.note}</p></div><Button variant="outline" onClick={onDetail} className="w-full justify-between">Inspect listing <ChevronRight /></Button><p className="text-center text-xs text-muted-foreground">Use ← to pass, ↑ to save, → to like</p></aside></div></div>;
 }
 
 function Detail({ listing, onClose, onSave }: { listing: Card; onClose: () => void; onSave: () => void }) {
@@ -191,5 +217,5 @@ function Onboarding({ profile, setProfile, onDone }: { profile: Record<string, T
 }
 
 function LiveBar({ signedIn, liveCount, fetching, status, onFetch }: { signedIn: boolean; liveCount: number; fetching: boolean; status: string; onFetch: () => void }) {
-  return <div className="border-b border-border bg-card"><div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 text-sm sm:px-8">{signedIn ? <><span className="text-muted-foreground" role="status">{status || (liveCount ? `${liveCount} live finds from the marketplaces · not yet AI-checked` : "No live finds yet — fetch some from the marketplaces.")}</span><Button size="sm" onClick={onFetch} disabled={fetching}>{fetching ? "Fetching…" : "Fetch new finds"}</Button></> : <><span className="text-muted-foreground">You’re looking at sample finds.</span><Button size="sm" variant="outline" asChild><a href="/auth">Sign in for live finds</a></Button></>}</div></div>;
+  return <div className="border-b border-border bg-card"><div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 text-sm sm:px-8">{signedIn ? <><span className="text-muted-foreground" role="status">{status || (liveCount ? `${liveCount} live finds matching your profile` : "No live finds yet — fetch some from the marketplaces.")}</span><Button size="sm" onClick={onFetch} disabled={fetching}>{fetching ? "Fetching…" : "Fetch new finds"}</Button></> : <><span className="text-muted-foreground">You’re looking at sample finds.</span><Button size="sm" variant="outline" asChild><a href="/auth">Sign in for live finds</a></Button></>}</div></div>;
 }
