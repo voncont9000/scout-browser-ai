@@ -80,10 +80,10 @@ export function ScoutApp() {
         <div className="mt-auto border-t border-border pt-5"><div className="text-xs uppercase tracking-[0.16em] text-muted-foreground">Screening active</div><div className="mt-2 flex items-center gap-2 text-sm"><span className="size-2 rounded-full bg-success" /> 9 sources monitored</div><a href="/auth" className="mt-4 block text-sm text-primary underline-offset-4 hover:underline">Sign in to sync</a></div>
       </aside>
 
-      <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-b border-border bg-background/95 px-4 backdrop-blur lg:ml-64 lg:px-8"><div className="lg:hidden"><Brand /></div><div className="hidden items-center gap-2 text-sm text-muted-foreground lg:flex"><Sparkles className="size-4 text-primary" /> 27 new matches since yesterday</div><div className="flex items-center gap-2"><Button variant="outline" size="icon" aria-label="Open filters"><Filter /></Button><Button variant="outline" className="hidden sm:inline-flex" asChild><a href="/auth">Sign in</a></Button></div></header>
+      <header className="sticky top-0 z-20 flex h-16 items-center justify-between border-b border-border bg-background/95 px-4 backdrop-blur lg:ml-64 lg:px-8"><div className="lg:hidden"><Brand /></div><div className="hidden items-center gap-2 text-sm text-muted-foreground lg:flex"><Sparkles className="size-4 text-primary" /> 27 new matches since yesterday</div><div className="flex items-center gap-2"><Button variant="outline" size="icon" aria-label="Choose categories" onClick={() => setOnboarding(true)}><Filter /></Button><Button variant="outline" className="hidden sm:inline-flex" asChild><a href="/auth">Sign in</a></Button></div></header>
 
       <main className="pb-24 lg:ml-64 lg:pb-8">
-        {view === "feed" && <Feed listing={listing} index={index} total={demoListings.length} onAction={advance} onDetail={() => setDetail(true)} />}
+        {view === "feed" && <><CategoryPills items={pillCategories} active={category} onChange={chooseCategory} onEdit={() => setOnboarding(true)} />{listing ? <Feed listing={listing} index={index % deck.length} total={deck.length} onAction={advance} onDetail={() => setDetail(true)} /> : <div className="mx-auto max-w-6xl px-4 py-8 sm:px-8"><Empty icon={Search} title={`No ${category.toLowerCase()} yet`} body="Scout will add matching finds here as new listings pass screening." /></div>}</>}
         {view === "shortlist" && <Shortlist ids={shortlist} onOpen={(id) => { setIndex(demoListings.findIndex((item) => item.id === id)); setView("feed"); setDetail(true); }} />}
         {view === "screening" && <Screening />}
         {view === "lab" && <RankerLab />}
@@ -92,7 +92,8 @@ export function ScoutApp() {
 
       <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t border-border bg-background/95 px-1 pb-[max(0.4rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur lg:hidden">{nav.map((item) => <Button key={item.id} variant="ghost" onClick={() => setView(item.id)} className={cn("h-14 flex-col gap-1 rounded-none px-1 text-[10px] text-muted-foreground", view === item.id && "text-primary")}><item.icon className="size-5" />{item.label.replace("Ranker ", "")}</Button>)}</nav>
 
-      {detail && <Detail listing={listing} onClose={() => setDetail(false)} onSave={() => advance("super")} />}
+      {onboarding && <Onboarding profile={profile} setProfile={setProfile} onDone={() => { window.localStorage.setItem("scout-onboarded", "1"); setOnboarding(false); chooseCategory("All"); }} />}
+      {detail && listing && <Detail listing={listing} onClose={() => setDetail(false)} onSave={() => advance("super")} />}
     </div>
   );
 }
@@ -119,3 +120,24 @@ function PreferenceSection({ title, items, profile, setProfile }: { title: strin
 
 function Page({ title, eyebrow, children }: { title: string; eyebrow: string; children: React.ReactNode }) { return <div className="mx-auto max-w-6xl px-4 py-7 sm:px-8 lg:py-10"><p className="eyebrow">{eyebrow}</p><h1 className="mt-2 mb-8 font-display text-4xl sm:text-5xl">{title}</h1>{children}</div>; }
 function Empty({ icon: Icon, title, body }: { icon: typeof Bookmark; title: string; body: string }) { return <div className="col-span-full grid min-h-80 place-items-center border border-dashed border-border p-8 text-center"><div><Icon className="mx-auto size-7 text-muted-foreground" /><h2 className="mt-4 font-display text-2xl">{title}</h2><p className="mt-2 max-w-sm text-sm text-muted-foreground">{body}</p></div></div>; }
+
+function CategoryPills({ items, active, onChange, onEdit }: { items: string[]; active: string; onChange: (value: string) => void; onEdit: () => void }) {
+  const all = ["All", ...items];
+  return <div className="sticky top-16 z-10 border-b border-border bg-background/95 backdrop-blur"><div className="mx-auto flex max-w-6xl items-center gap-2 overflow-x-auto px-4 py-3 sm:px-8" role="tablist" aria-label="Filter by category">{all.map((item) => { const count = item === "All" ? demoListings.length : demoListings.filter((listing) => listing.category === item).length; const selected = active === item; return <button key={item} type="button" role="tab" aria-selected={selected} onClick={() => onChange(item)} className={cn("flex shrink-0 items-center gap-1.5 rounded-full border px-3.5 py-1.5 text-sm transition-colors", selected ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground hover:text-foreground")}>{item}<span className={cn("text-xs tabular-nums", selected ? "opacity-80" : "opacity-60")}>{count}</span></button>; })}<button type="button" onClick={onEdit} className="ml-1 flex shrink-0 items-center gap-1.5 px-2 py-1.5 text-sm text-primary underline-offset-4 hover:underline"><SlidersHorizontal className="size-4" /> Edit</button></div></div>;
+}
+
+function Onboarding({ profile, setProfile, onDone }: { profile: Record<string, TriState>; setProfile: React.Dispatch<React.SetStateAction<Record<string, TriState>>>; onDone: () => void }) {
+  const saveProfile = useServerFn(saveScreeningProfile);
+  const [saving, setSaving] = useState(false);
+  const selected = categories.filter((item) => profile[item] === "include");
+  const toggle = (item: string) => setProfile((current) => ({ ...current, [item]: current[item] === "include" ? "neutral" : "include" }));
+  const finish = async () => {
+    setSaving(true);
+    try {
+      await saveProfile({ data: { periods: Object.fromEntries(periods.map((item) => [item, profile[item] ?? "neutral"])), categories: Object.fromEntries(categories.map((item) => [item, profile[item] ?? "neutral"])), countries: Object.fromEntries(countries.map((item) => [item, "neutral"])), sources: Object.fromEntries(sources.map((item) => [item, "neutral"])), minPrice: 0, maxPrice: 5000, minMargin: 250, hideReproductions: true } });
+    } catch { /* signed-out visitors keep choices locally */ }
+    setSaving(false);
+    onDone();
+  };
+  return <div className="fixed inset-0 z-50 overflow-y-auto bg-background" role="dialog" aria-modal="true" aria-labelledby="onboarding-title"><div className="mx-auto max-w-4xl px-4 pb-32 pt-10 sm:px-8"><Brand /><p className="eyebrow mt-12">Step 1 · Your stock</p><h1 id="onboarding-title" className="mt-2 font-display text-4xl sm:text-5xl">What do you buy?</h1><p className="mt-3 max-w-lg text-muted-foreground">Pick the furniture you trade. Scout will focus your finds on these, and you can change them any time.</p><div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3">{categories.map((item) => { const on = profile[item] === "include"; return <button key={item} type="button" aria-pressed={on} onClick={() => toggle(item)} className={cn("relative flex min-h-24 items-end border p-4 text-left transition-colors", on ? "border-primary bg-primary/5" : "border-border bg-card hover:border-foreground/30")}><span className="font-display text-xl">{item}</span><span className={cn("absolute right-3 top-3 grid size-6 place-items-center rounded-full border", on ? "border-primary bg-primary text-primary-foreground" : "border-border")}>{on && <Check className="size-3.5" />}</span></button>; })}</div></div><div className="fixed inset-x-0 bottom-0 border-t border-border bg-background/95 backdrop-blur"><div className="mx-auto flex max-w-4xl items-center justify-between gap-4 px-4 py-4 sm:px-8"><span className="text-sm text-muted-foreground">{selected.length ? `${selected.length} selected` : "Nothing selected shows everything"}</span><Button onClick={finish} disabled={saving}>{saving ? "Saving…" : "Start scouting"} <ArrowRight /></Button></div></div></div>;
+}
