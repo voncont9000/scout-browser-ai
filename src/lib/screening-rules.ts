@@ -21,7 +21,7 @@ export function textScreen(listing: { title: string; description: string | null;
 }
 
 export type Tags = {
-  category: string; period: string; secondary_period: string | null; period_confidence: number | null;
+  category: string; subcategory?: string | null; period: string; secondary_period: string | null; period_confidence: number | null;
   is_reproduction: string; is_furniture: boolean;
 };
 
@@ -48,11 +48,16 @@ export function decide(
   const categoryPref = profile.categories[tags.category] ?? "neutral";
   if (confident && periodPref === "exclude") return { status: "rejected", reason: `Excluded period: ${tags.period}` };
   if (categoryPref === "exclude") return { status: "rejected", reason: `Excluded category: ${tags.category}` };
+  const prefix = `${tags.category} › `;
+  const subPref = tags.subcategory ? profile.categories[prefix + tags.subcategory] ?? "neutral" : "neutral";
+  if (subPref === "exclude") return { status: "rejected", reason: `Excluded type: ${tags.subcategory}` };
+  const subsPicked = Object.entries(profile.categories).some(([k, v]) => k.startsWith(prefix) && v === "include");
+  const subOk = !subsPicked || subPref === "include";
 
   const anyPeriodIncluded = Object.values(profile.periods).includes("include");
-  const anyCategoryIncluded = Object.values(profile.categories).includes("include");
+  const anyCategoryIncluded = Object.entries(profile.categories).some(([k, v]) => !k.includes(" › ") && v === "include");
   const periodOk = periodPref === "include" || (!anyPeriodIncluded && periodPref === "neutral");
-  const categoryOk = categoryPref === "include" || (!anyCategoryIncluded && categoryPref === "neutral");
+  const categoryOk = (categoryPref === "include" || (!anyCategoryIncluded && categoryPref === "neutral")) && subOk;
   if (confident && periodOk && categoryOk) return { status: "passed", reason: null };
   if (!periodOk && confident) return { status: "rejected", reason: `Outside your periods: ${tags.period}` };
   return { status: "maybe", reason: !confident ? "Period uncertain" : "Category outside your picks" };

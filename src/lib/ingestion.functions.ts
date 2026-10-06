@@ -192,7 +192,7 @@ export const getLiveListings = createServerFn({ method: "GET" })
     for (const row of data ?? []) {
       const source = (row.sources as { name: string } | null)?.name ?? "Marketplace";
       const tagRow = (Array.isArray(row.listing_tags) ? row.listing_tags[0] : row.listing_tags) as null | {
-        category: string; period: string; secondary_period: string | null; period_confidence: number | null; is_reproduction: string; is_furniture: boolean;
+        category: string; subcategory: string | null; period: string; secondary_period: string | null; period_confidence: number | null; is_reproduction: string; is_furniture: boolean;
         style: string | null; resale_low_gbp: number | null; resale_high_gbp: number | null; valuation_confidence: number | null; dealer_note: string | null; red_flags: string[];
       };
       let decision: LiveListing["decision"] = row.screening_status === "maybe" ? "maybe" : "pending";

@@ -2,7 +2,7 @@ import { createOpenAI } from "@ai-sdk/openai";
 import { Output, streamText } from "ai";
 import { z } from "zod";
 import { createRunIdFetch } from "./run-id.server.ts";
-import { categories, periods } from "../taxonomy";
+import { categories, periods, subcategories } from "../taxonomy";
 
 const screeningSchema = z.object({
   isFurniture: z.boolean(),
@@ -21,6 +21,7 @@ export class AiBlockedError extends Error {
 const system = `You are Scout, a conservative antique and vintage furniture specialist screening marketplace listings for a UK dealer.
 Classify only from the photo and supplied text. Listings may be in French, Spanish, German, Italian or Dutch.
 category must be exactly one of: ${categories.join(", ")}, Other.
+subcategory must be one of the subtypes listed for the chosen category, or null: ${Object.entries(subcategories).map(([c, l]) => `${c}: ${l.join(", ")}`).join("; ")}.
 period and secondaryPeriod must be exactly one of: ${periods.join(", ")}, Unknown (secondaryPeriod may be null).
 reproduction is "true" for reproductions, modern copies or "in the style of" pieces; "unsure" when you cannot tell.
 resaleLowGbp/resaleHighGbp: realistic UK trade resale range in GBP after light cleaning. Use 0 for both if not furniture.
@@ -46,6 +47,7 @@ export async function screenListingWithAstra(input: { title: string; description
     return {
       ...output,
       category: categories.includes(output.category) ? output.category : "Other",
+      subcategory: output.subcategory && (subcategories[output.category] ?? []).includes(output.subcategory) ? output.subcategory : null,
       period: periods.includes(output.period) ? output.period : "Unknown",
       secondaryPeriod: output.secondaryPeriod && periods.includes(output.secondaryPeriod) ? output.secondaryPeriod : null,
       periodConfidence: Math.min(1, Math.max(0, output.periodConfidence)),
