@@ -177,7 +177,11 @@ export const getLiveListings = createServerFn({ method: "GET" })
       context.supabase.from("screening_profiles").select("periods,categories,sources,min_price_gbp,max_price_gbp,hide_reproductions").eq("user_id", context.userId).maybeSingle(),
       context.supabase.from("listings")
         .select("id,title,listing_url,country,location,image_urls,price,currency,price_gbp,price_kind,auction_end_time,screening_status,description,sources(name),listing_tags(*)")
-        .in("screening_status", ["pending", "passed", "maybe"]).order("created_at", { ascending: false }).limit(150),
+        .in("screening_status", ["pending", "passed", "maybe"])
+        // Hide old finds: ended auctions and anything fetched more than 21 days ago (likely sold or removed).
+        .or(`auction_end_time.is.null,auction_end_time.gt.${new Date().toISOString()}`)
+        .gt("created_at", new Date(Date.now() - 21 * 86400000).toISOString())
+        .order("created_at", { ascending: false }).limit(150),
       context.supabase.from("period_terms").select("period_name,terms"),
     ]);
     if (error) throw new Error(error.message);
