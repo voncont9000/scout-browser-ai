@@ -94,7 +94,7 @@ export function ScoutApp() {
   }, []);
 
   const refreshLive = async () => { try { setLive((await loadLive()).map(toCard)); } catch { /* keep current cards */ } };
-  useEffect(() => { if (signedIn) { void refreshLive(); void collect().then((r) => { if (r.imported) void refreshLive(); }).catch(() => undefined); } else setLive([]); }, [signedIn]);
+  useEffect(() => { if (signedIn) { void refreshLive(); void collect().then(() => screenAll()).then(() => refreshLive()).catch(() => undefined); } else setLive([]); }, [signedIn]);
 
   const fetchNew = async () => {
     setFetching(true);
