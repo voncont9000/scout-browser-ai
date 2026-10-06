@@ -37,7 +37,7 @@ export async function screenListingWithAstra(input: { title: string; description
       system,
       messages: [{ role: "user", content: [
         { type: "text", text: `Title: ${input.title}\nAsking price: ${input.priceText}\nDescription: ${input.description.slice(0, 2500)}` },
-        { type: "image", image: new URL(input.imageUrl) },
+        { type: "file", data: new URL(input.imageUrl), mediaType: "image/jpeg" },
       ] }],
       output: Output.object({ schema: screeningSchema }),
       providerOptions: { openai: { store: false, forceReasoning: true, reasoningEffort: "low", reasoningSummary: "auto", include: ["reasoning.encrypted_content"] } },
