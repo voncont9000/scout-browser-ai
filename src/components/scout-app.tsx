@@ -93,7 +93,7 @@ export function ScoutApp() {
       <nav className="fixed inset-x-0 bottom-0 z-30 grid grid-cols-5 border-t border-border bg-background/95 px-1 pb-[max(0.4rem,env(safe-area-inset-bottom))] pt-2 backdrop-blur lg:hidden">{nav.map((item) => <Button key={item.id} variant="ghost" onClick={() => setView(item.id)} className={cn("h-14 flex-col gap-1 rounded-none px-1 text-[10px] text-muted-foreground", view === item.id && "text-primary")}><item.icon className="size-5" />{item.label.replace("Ranker ", "")}</Button>)}</nav>
 
       {onboarding && <Onboarding profile={profile} setProfile={setProfile} onDone={() => { window.localStorage.setItem("scout-onboarded", "1"); setOnboarding(false); chooseCategory("All"); }} />}
-      {detail && listing && <Detail listing={listing} onClose={() => setDetail(false)} onSave={() => advance("super")} />}
+      {detail && listing ? <Detail listing={listing} onClose={() => setDetail(false)} onSave={() => advance("super")} />}
     </div>
   );
 }
