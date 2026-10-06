@@ -39,15 +39,26 @@ export function ScoutApp() {
   const [passed, setPassed] = useState<string[]>([]);
   const [detail, setDetail] = useState(false);
   const [profile, setProfile] = useState<Record<string, TriState>>({ "Art Deco": "include", "Mid Century Modern": "include", Victorian: "exclude", Armchairs: "include", Sideboards: "include", Lighting: "neutral" });
-  const listing = demoListings[index % demoListings.length] ?? demoListings[0];
+  const [category, setCategory] = useState<string>("All");
+  const [onboarding, setOnboarding] = useState(false);
 
-  if (!listing) return null;
+  useEffect(() => {
+    if (!window.localStorage.getItem("scout-onboarded")) setOnboarding(true);
+  }, []);
+
+  const interests = categories.filter((item) => profile[item] === "include");
+  const pillCategories = interests.length ? interests : categories;
+  const deck = category === "All" ? demoListings : demoListings.filter((item) => item.category === category);
+  const listing = deck.length ? deck[index % deck.length] : undefined;
+
+  const chooseCategory = (next: string) => { setCategory(next); setIndex(0); setDetail(false); };
 
   const advance = (action: "pass" | "like" | "super") => {
+    if (!listing) return;
     if (action === "pass") setPassed((current) => [...new Set([...current, listing.id])]);
     if (action === "super") setShortlist((current) => [...new Set([...current, listing.id])]);
     setDetail(false);
-    setIndex((current) => (current + 1) % demoListings.length);
+    setIndex((current) => (current + 1) % Math.max(deck.length, 1));
   };
 
   useEffect(() => {
