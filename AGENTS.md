@@ -12,3 +12,4 @@
 - Keep marketplace integrations behind a shared adapter contract so provider-specific extraction never leaks into screening or ranking logic.
 - Keep protected dealer data under Cloud row-level policies and authenticated server functions because browser route guards are not a security boundary.
 - Run ingestion, AI screening, and embeddings as bounded idempotent database-backed jobs because page-triggered processing can duplicate cost and work.
+- Store AI tags once per listing and apply each dealer profile at read time because profile edits must re-screen without new model calls.

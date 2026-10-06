@@ -35,12 +35,3 @@ export const saveSwipe = createServerFn({ method: "POST" })
     if (data.action === "super_like") await context.supabase.from("shortlist").upsert({ user_id: context.userId, listing_id: data.listingId }, { onConflict: "user_id,listing_id" });
     return { ok: true };
   });
-
-export const screenListing = createServerFn({ method: "POST" })
-  .middleware([requireSupabaseAuth])
-  .inputValidator((input) => z.object({ title: z.string(), description: z.string(), imageUrl: z.string().url() }).parse(input))
-  .handler(async ({ data }) => {
-    const { screenListingWithAstra } = await import("./ai/screening.server");
-    const request = new Request("https://scout.local/screen");
-    return screenListingWithAstra(data, request);
-  });
