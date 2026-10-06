@@ -53,9 +53,9 @@ export function decide(
   const anyCategoryIncluded = Object.values(profile.categories).includes("include");
   const periodOk = periodPref === "include" || (!anyPeriodIncluded && periodPref === "neutral");
   const categoryOk = categoryPref === "include" || (!anyCategoryIncluded && categoryPref === "neutral");
-  if (confident && periodOk && categoryOk && tags.is_reproduction !== "unsure") return { status: "passed", reason: null };
+  if (confident && periodOk && categoryOk) return { status: "passed", reason: null };
   if (!periodOk && confident) return { status: "rejected", reason: `Outside your periods: ${tags.period}` };
-  return { status: "maybe", reason: !confident ? "Period uncertain" : tags.is_reproduction === "unsure" ? "Possible reproduction" : "Category outside your picks" };
+  return { status: "maybe", reason: !confident ? "Period uncertain" : "Category outside your picks" };
 }
 
 // Bargain score per spec: midpoint resale minus price, scaled by valuation confidence.
