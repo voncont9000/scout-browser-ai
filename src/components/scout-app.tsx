@@ -48,7 +48,8 @@ export function ScoutApp() {
 
   const interests = categories.filter((item) => profile[item] === "include");
   const pillCategories = interests.length ? interests : categories;
-  const deck = category === "All" ? demoListings : demoListings.filter((item) => item.category === category);
+  const allowed = demoListings.filter((item) => profile[item.source] !== "exclude");
+  const deck = category === "All" ? allowed : allowed.filter((item) => item.category === category);
   const listing = deck.length ? deck[index % deck.length] : undefined;
 
   const chooseCategory = (next: string) => { setCategory(next); setIndex(0); setDetail(false); };
