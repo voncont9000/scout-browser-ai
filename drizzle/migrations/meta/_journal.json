@@ -1,5 +1,27 @@
 {
   "version": "7",
   "dialect": "postgresql",
-  "entries": []
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1791310283764,
+      "tag": "0000_create_scout_core",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1791310350897,
+      "tag": "0001_secure_listing_images",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1791310529684,
+      "tag": "0002_harden_scout_security",
+      "breakpoints": true
+    }
+  ]
 }
