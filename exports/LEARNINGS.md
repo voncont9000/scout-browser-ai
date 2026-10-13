@@ -52,7 +52,7 @@ Checks run in this order. The first match rejects the listing (`rejected_text`, 
 
 Junk terms: `wanted`, `recherche`, `cherche`, `suche`, `busco`, `cerco`, `gezocht`, `spare parts`, `pièces détachées`, `ersatzteile`, `flat pack`, `flat-pack`, `ikea`, `neuf sous emballage`, `neu ovp`, `nuevo a estrenar`, `nuovo imballato`.
 
-Known weakness: plain substring matching. "recherche" rejected one Kleinanzeigen lamp listing, most likely a real sale that used the word in passing (e.g. "Recherche ergab…") ("Text screen: recherche"). "suche" also matches "Besuche…". Use word boundaries and match only wanted-ad phrasing ("je recherche", "suche ein…").
+Known weakness: plain substring matching. "recherche" rejected one Kleinanzeigen lamp listing, a real sale of a 1960s Mid-Century lamp whose description said "Nach meinen Recherchen…" ("according to my research"). "suche" also matches "Besuche…". Use word boundaries and match only wanted-ad phrasing ("je recherche", "suche ein…").
 
 At read time, the dealer's **excluded period terms** (all synonyms of excluded periods, in every language) are also matched against title and description.
 
