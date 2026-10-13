@@ -52,7 +52,7 @@ Checks run in this order. The first match rejects the listing (`rejected_text`, 
 
 Junk terms: `wanted`, `recherche`, `cherche`, `suche`, `busco`, `cerco`, `gezocht`, `spare parts`, `pièces détachées`, `ersatzteile`, `flat pack`, `flat-pack`, `ikea`, `neuf sous emballage`, `neu ovp`, `nuevo a estrenar`, `nuovo imballato`.
 
-Known weakness: plain substring matching. "recherche" (French for "sought after") rejected a real German listing that used the word in a description ("Text screen: recherche"). "suche" also matches "Besuche…". Use word boundaries and match only wanted-ad phrasing ("je recherche", "suche ein…").
+Known weakness: plain substring matching. "recherche" rejected one Kleinanzeigen lamp listing, most likely a real sale that used the word in passing (e.g. "Recherche ergab…") ("Text screen: recherche"). "suche" also matches "Besuche…". Use word boundaries and match only wanted-ad phrasing ("je recherche", "suche ein…").
 
 At read time, the dealer's **excluded period terms** (all synonyms of excluded periods, in every language) are also matched against title and description.
 
@@ -140,7 +140,7 @@ Observed in the data: reproduction was "unsure" on 110 of 157 listings, "true" o
 11. **Seller personal data comes back even when you turn it off** (Leboncoin `owner.name`/`siren`/`user_id`, Wallapop `sellerId`, Kleinanzeigen `user.name`, Catawiki `sellerUserName`/`sellerShopName`). Descriptions can also contain seller Impressum blocks. Scrub before storing. (The live database still holds the unscrubbed `raw_json`. Only the export is scrubbed.)
 12. **Link checks are blocked** by Leboncoin (bot challenge) and Catawiki (Akamai "Access Denied"), both server-side and in headless Chromium. You can't automatically tell whether those items have sold. We fell back to a 21-day cut-off plus the auction end time. Wallapop and Kleinanzeigen links checked fine.
 13. **Images are hotlinked** from the marketplace CDNs and disappear when an ad is removed. A private storage bucket exists, but images are not copied into it yet.
-14. **AI image input:** sending the image as an `image` part with a URL produced an AI SDK deprecation warning. We send it as a `file` part with `mediaType: image/jpeg`. Some CDN images could not be read. Those listings go to Maybe rather than being retried.
+14. **AI image input:** sending the image as an `image` part with a URL produced an AI SDK deprecation warning. We send it as a `file` part with `mediaType: image/jpeg`. Per-item failures go to Maybe rather than being retried. None happened in this dataset.
 15. **Coverage is tiny:** the only fetch searched lamps (the profile in use had only Lighting included). That gave 8 searches × 20 items. eBay, Gumtree, Marktplaats and Subito actors are configured in `sources` (`automation-lab/ebay-scraper`, `memo23/gumtree-cheerio`, `haketa/marktplaats-scraper`, `nogards95/subito-scraper`), but they have no adapter and have never run.
 16. **No schedule:** fetching and screening only run while a signed-in user has the page open. Move both to server-side scheduled jobs.
 17. **Browser-use fallback** for hard sites was specified but never enabled: no browser-use model was available in the workspace's AI gateway.
