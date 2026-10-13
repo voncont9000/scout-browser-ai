@@ -114,15 +114,6 @@
             "value_label": "4"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/c0e38a8e-0da3-595b-9055-8a4d327d7911?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/c0e38a8e-0da3-595b-9055-8a4d327d7911?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/c0e38a8e-0da3-595b-9055-8a4d327d7911?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "500",
             "values": [
@@ -436,15 +427,6 @@
             "value_label": "14"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/051ab912-fdff-5c4b-8ccd-ac02b7f7e92d?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/051ab912-fdff-5c4b-8ccd-ac02b7f7e92d?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/051ab912-fdff-5c4b-8ccd-ac02b7f7e92d?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "5000",
             "values": [
@@ -721,15 +703,6 @@
         "has_phone": false,
         "old_price": "100",
         "attributes": [
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/8b2faed6-d91f-5bad-9291-5fbad2c405d4?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/8b2faed6-d91f-5bad-9291-5fbad2c405d4?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/8b2faed6-d91f-5bad-9291-5fbad2c405d4?rule=pp-small"
-          },
           {
             "key": "estimated_parcel_weight",
             "value": "40000",
@@ -1060,15 +1033,6 @@
             "value_label": "52"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/8eb275f4-d094-5477-8fce-2d058a8349bd?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/8eb275f4-d094-5477-8fce-2d058a8349bd?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/8eb275f4-d094-5477-8fce-2d058a8349bd?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "500",
             "values": [
@@ -1356,15 +1320,6 @@
             ],
             "generic": false,
             "value_label": "177"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/8b89985d-84cd-5c0c-a7b9-60a394271218?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/8b89985d-84cd-5c0c-a7b9-60a394271218?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/8b89985d-84cd-5c0c-a7b9-60a394271218?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -1678,15 +1633,6 @@
             "value_label": "5"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/aa894083-96e6-5e48-b69b-78d627c09570?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/aa894083-96e6-5e48-b69b-78d627c09570?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/aa894083-96e6-5e48-b69b-78d627c09570?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "500",
             "values": [
@@ -1994,15 +1940,6 @@
             "value_label": "2"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/6dcf5ceb-d23f-50c6-bf51-85dbd711e6a4?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/6dcf5ceb-d23f-50c6-bf51-85dbd711e6a4?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/6dcf5ceb-d23f-50c6-bf51-85dbd711e6a4?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "500",
             "values": [
@@ -2305,15 +2242,6 @@
         "condition": "Très bon état",
         "has_phone": false,
         "attributes": [
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/1246d91d-9519-54a8-a848-8882a4f01173?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/1246d91d-9519-54a8-a848-8882a4f01173?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/1246d91d-9519-54a8-a848-8882a4f01173?rule=pp-small"
-          },
           {
             "key": "estimated_parcel_weight",
             "value": "10000",
@@ -2654,15 +2582,6 @@
             "value_label": "571"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/98b9b13d-df4a-50ad-a2a3-750627ec084c?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/98b9b13d-df4a-50ad-a2a3-750627ec084c?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/98b9b13d-df4a-50ad-a2a3-750627ec084c?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "2000",
             "values": [
@@ -2980,15 +2899,6 @@
             "value_label": "45"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/bac47207-30c3-5177-ae41-0911c73b291d?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/bac47207-30c3-5177-ae41-0911c73b291d?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/bac47207-30c3-5177-ae41-0911c73b291d?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "5000",
             "values": [
@@ -3266,15 +3176,6 @@
         "condition": "État neuf",
         "has_phone": false,
         "attributes": [
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/5e358598-490e-5d6b-b60b-7160c6af4976?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/5e358598-490e-5d6b-b60b-7160c6af4976?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/5e358598-490e-5d6b-b60b-7160c6af4976?rule=pp-small"
-          },
           {
             "key": "estimated_parcel_weight",
             "value": "500",
@@ -3579,15 +3480,6 @@
         "has_phone": true,
         "old_price": "440",
         "attributes": [
-          {
-            "key": "activity_sector",
-            "value": "4",
-            "values": [
-              "4"
-            ],
-            "generic": false,
-            "value_label": "4"
-          },
           {
             "key": "rating_score",
             "value": "1",
@@ -3907,15 +3799,6 @@
             "value_label": "145"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/64de74d9-6e9a-57e1-af6d-8434efa5898f?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/64de74d9-6e9a-57e1-af6d-8434efa5898f?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/64de74d9-6e9a-57e1-af6d-8434efa5898f?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "500",
             "values": [
@@ -4224,15 +4107,6 @@
             ],
             "generic": false,
             "value_label": "177"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/8b89985d-84cd-5c0c-a7b9-60a394271218?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/8b89985d-84cd-5c0c-a7b9-60a394271218?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/8b89985d-84cd-5c0c-a7b9-60a394271218?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -4570,15 +4444,6 @@
             "value_label": "96"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/2c278ea1-7fcd-5720-abe3-d59e77f55d85?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/2c278ea1-7fcd-5720-abe3-d59e77f55d85?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/2c278ea1-7fcd-5720-abe3-d59e77f55d85?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "10000",
             "values": [
@@ -4846,15 +4711,6 @@
         "condition": "Très bon état",
         "has_phone": false,
         "attributes": [
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/d054847a-3d2d-5b50-aeaa-372d17fba477?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/d054847a-3d2d-5b50-aeaa-372d17fba477?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/d054847a-3d2d-5b50-aeaa-372d17fba477?rule=pp-small"
-          },
           {
             "key": "estimated_parcel_weight",
             "value": "2265",
@@ -5209,15 +5065,6 @@
             "value_label": "273"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/4bc208e2-98b3-5c43-994c-c1b5e88f73c4?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/4bc208e2-98b3-5c43-994c-c1b5e88f73c4?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/4bc208e2-98b3-5c43-994c-c1b5e88f73c4?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "2000",
             "values": [
@@ -5513,15 +5360,6 @@
             "value_label": "27"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/64133ce9-1b87-5240-b33d-4b2a2b5ef312?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/64133ce9-1b87-5240-b33d-4b2a2b5ef312?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/64133ce9-1b87-5240-b33d-4b2a2b5ef312?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "1000",
             "values": [
@@ -5809,15 +5647,6 @@
             ],
             "generic": false,
             "value_label": "3"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/083b9637-ac9b-58c8-a6f8-2a31c9774c13?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/083b9637-ac9b-58c8-a6f8-2a31c9774c13?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/083b9637-ac9b-58c8-a6f8-2a31c9774c13?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -6137,15 +5966,6 @@
             ],
             "generic": false,
             "value_label": "32"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/52e60e4c-4c76-5602-b425-f612cfbce3c7?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/52e60e4c-4c76-5602-b425-f612cfbce3c7?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/52e60e4c-4c76-5602-b425-f612cfbce3c7?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -6777,15 +6597,6 @@
             "value_label": "135"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/b8578989-5f88-5d33-8554-4c18cc1369b7?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/b8578989-5f88-5d33-8554-4c18cc1369b7?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/b8578989-5f88-5d33-8554-4c18cc1369b7?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "2000",
             "values": [
@@ -7079,15 +6890,6 @@
         "condition": "Bon état",
         "has_phone": true,
         "attributes": [
-          {
-            "key": "activity_sector",
-            "value": "4",
-            "values": [
-              "4"
-            ],
-            "generic": false,
-            "value_label": "4"
-          },
           {
             "key": "rating_score",
             "value": "1",
@@ -7409,15 +7211,6 @@
             "value_label": "1"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/ae354773-ab86-5b67-af6f-1c1f08855df9?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/ae354773-ab86-5b67-af6f-1c1f08855df9?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/ae354773-ab86-5b67-af6f-1c1f08855df9?rule=pp-small"
-          },
-          {
             "key": "is_bundleable",
             "value": "true",
             "values": [
@@ -7703,15 +7496,6 @@
             ],
             "generic": false,
             "value_label": "272"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/5d6c46cc-69db-5ca0-b0fa-e6730883c7ce?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/5d6c46cc-69db-5ca0-b0fa-e6730883c7ce?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/5d6c46cc-69db-5ca0-b0fa-e6730883c7ce?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -8051,15 +7835,6 @@
             ],
             "generic": false,
             "value_label": "809"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/43422218-3dd8-55f0-b45c-82cd24b6ca25?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/43422218-3dd8-55f0-b45c-82cd24b6ca25?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/43422218-3dd8-55f0-b45c-82cd24b6ca25?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -8412,15 +8187,6 @@
             "value_label": "1145"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/3ea18735-9076-570e-bbc4-a83ec005e4be?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/3ea18735-9076-570e-bbc4-a83ec005e4be?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/3ea18735-9076-570e-bbc4-a83ec005e4be?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "2000",
             "values": [
@@ -8736,15 +8502,6 @@
             "value_label": "233"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/1aa6c139-7821-5bc5-a3ce-73e0614b4923?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/1aa6c139-7821-5bc5-a3ce-73e0614b4923?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/1aa6c139-7821-5bc5-a3ce-73e0614b4923?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "2000",
             "values": [
@@ -8998,15 +8755,6 @@
         "condition": "Très bon état",
         "has_phone": true,
         "attributes": [
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/576a0a7b-3d2b-54d7-ac28-aa6440b9968f?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/576a0a7b-3d2b-54d7-ac28-aa6440b9968f?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/576a0a7b-3d2b-54d7-ac28-aa6440b9968f?rule=pp-small"
-          },
           {
             "key": "estimated_parcel_weight",
             "value": "5000",
@@ -9306,15 +9054,6 @@
             ],
             "generic": false,
             "value_label": "5"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/276fcc2d-ab27-5a9d-83c4-1d302b783f17?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/276fcc2d-ab27-5a9d-83c4-1d302b783f17?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/276fcc2d-ab27-5a9d-83c4-1d302b783f17?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -9682,15 +9421,6 @@
             "value_label": "183"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/7f52b3b6-b580-570d-822e-b10cfb3b57d5?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/7f52b3b6-b580-570d-822e-b10cfb3b57d5?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/7f52b3b6-b580-570d-822e-b10cfb3b57d5?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "1126",
             "values": [
@@ -10028,15 +9758,6 @@
             ],
             "generic": false,
             "value_label": "183"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/7f52b3b6-b580-570d-822e-b10cfb3b57d5?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/7f52b3b6-b580-570d-822e-b10cfb3b57d5?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/7f52b3b6-b580-570d-822e-b10cfb3b57d5?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -10386,15 +10107,6 @@
             "value_label": "141"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/a7a83867-8fc5-559b-987c-0c644233a92d?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/a7a83867-8fc5-559b-987c-0c644233a92d?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/a7a83867-8fc5-559b-987c-0c644233a92d?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "2000",
             "values": [
@@ -10700,15 +10412,6 @@
             ],
             "generic": false,
             "value_label": "91"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/179930de-1059-552a-9cab-97d673b2c108?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/179930de-1059-552a-9cab-97d673b2c108?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/179930de-1059-552a-9cab-97d673b2c108?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -11033,15 +10736,6 @@
             ],
             "generic": false,
             "value_label": "251"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/2d2e81a3-ad5f-57fd-bd03-c60c782cfa6b?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/2d2e81a3-ad5f-57fd-bd03-c60c782cfa6b?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/2d2e81a3-ad5f-57fd-bd03-c60c782cfa6b?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -11400,15 +11094,6 @@
             "value_label": "2"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/656eaa16-0dc3-5a38-9772-e1f534a55728?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/656eaa16-0dc3-5a38-9772-e1f534a55728?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/656eaa16-0dc3-5a38-9772-e1f534a55728?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "40000",
             "values": [
@@ -11729,15 +11414,6 @@
             ],
             "generic": false,
             "value_label": "2"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/656eaa16-0dc3-5a38-9772-e1f534a55728?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/656eaa16-0dc3-5a38-9772-e1f534a55728?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/656eaa16-0dc3-5a38-9772-e1f534a55728?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -12071,15 +11747,6 @@
             ],
             "generic": false,
             "value_label": "107"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/b540ef0c-fa87-55bf-a2a1-4cc9352dd31b?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/b540ef0c-fa87-55bf-a2a1-4cc9352dd31b?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/b540ef0c-fa87-55bf-a2a1-4cc9352dd31b?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
@@ -12434,15 +12101,6 @@
             "value_label": "809"
           },
           {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/43422218-3dd8-55f0-b45c-82cd24b6ca25?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/43422218-3dd8-55f0-b45c-82cd24b6ca25?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/43422218-3dd8-55f0-b45c-82cd24b6ca25?rule=pp-small"
-          },
-          {
             "key": "estimated_parcel_weight",
             "value": "1000",
             "values": [
@@ -12724,15 +12382,6 @@
             ],
             "generic": false,
             "value_label": "3"
-          },
-          {
-            "key": "profile_picture_url",
-            "value": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/29db9840-b6a7-5c38-a50d-5d1c3e8afa56?rule=pp-small",
-            "values": [
-              "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/29db9840-b6a7-5c38-a50d-5d1c3e8afa56?rule=pp-small"
-            ],
-            "generic": false,
-            "value_label": "https://img.leboncoin.fr/api/v1/tenants/9a6387a1-6259-4f2c-a887-7e67f23dd4cb/domains/20bda58f-d650-462e-a72a-a5a7ecf2bf88/buckets/21d2b0bc-e54c-4b64-a30b-89127b18b785/images/profile/pictures/default/29db9840-b6a7-5c38-a50d-5d1c3e8afa56?rule=pp-small"
           },
           {
             "key": "estimated_parcel_weight",
